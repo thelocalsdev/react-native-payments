@@ -366,6 +366,7 @@ export default class PaymentRequest {
     paymentData: string,
     shippingAddress: Object,
     payerEmail: string,
+    cloudpaymentsCryptogramPacket: string,
     paymentToken?: string,
     paymentMethod: Object
   }) {
@@ -388,7 +389,8 @@ export default class PaymentRequest {
       payerPhone: this._options.requestPayerPhone ? this._shippingAddress.phone : null,
       payerEmail: IS_ANDROID && this._options.requestPayerEmail
         ? details.payerEmail
-        : null
+        : null,
+      cloudpaymentsCryptogramPacket: IS_IOS ? details.cloudpaymentsCryptogramPacket : null,
     });
 
     return this._acceptPromiseResolver(paymentResponse);
@@ -507,4 +509,3 @@ export default class PaymentRequest {
 
   static canMakePaymentsUsingNetworks = NativePayments.canMakePaymentsUsingNetworks;
 }
-

@@ -21,6 +21,7 @@ export default class PaymentResponse {
   _payerPhone: null | string;
   _payerEmail: null | string;
   _completeCalled: boolean;
+  _cloudpaymentsCryptogramPacket: null | string;
 
   constructor(paymentResponse: Object) {
     // Set properties as readOnly
@@ -32,6 +33,7 @@ export default class PaymentResponse {
     this._payerName = paymentResponse.payerName;
     this._payerPhone = paymentResponse.payerPhone;
     this._payerEmail = paymentResponse.payerEmail;
+    this._cloudpaymentsCryptogramPacket = paymentResponse.cloudpaymentsCryptogramPacket;
 
     // Internal Slots
     this._completeCalled = false;
@@ -75,6 +77,10 @@ export default class PaymentResponse {
   // https://www.w3.org/TR/payment-request/#payeremail-attribute
   get payerEmail(): null | string {
     return this._payerEmail;
+  }
+
+  get cloudpaymentsCryptogramPacket(): null | string {
+    return this._cloudpaymentsCryptogramPacket;
   }
 
   // https://www.w3.org/TR/payment-request/#complete-method
