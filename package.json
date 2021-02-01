@@ -11,8 +11,8 @@
     "lint:fix": "npm run lint -- --fix",
     "test": "jest"
   },
-  "homepage": "https://github.com/naoufal/react-native-payments",
-  "repository": "https://github.com/naoufal/react-native-payments",
+  "homepage": "https://github.com/thelocalsdev/react-native-payments",
+  "repository": "https://github.com/thelocalsdev/react-native-payments",
   "keywords": [
     "react",
     "react-native",
