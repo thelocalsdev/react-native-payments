@@ -508,4 +508,10 @@ export default class PaymentRequest {
   }
 
   static canMakePaymentsUsingNetworks = NativePayments.canMakePaymentsUsingNetworks;
+
+  static canMakePaymentsByMethod(methodData) {
+    return NativePayments.canMakePayments(
+      getPlatformMethodData(JSON.parse(JSON.stringify(methodData)), Platform.OS)
+    );
+  }
 }
